@@ -9,7 +9,8 @@
             "request": "launch",
             "type": "dart",
             "args": [
-                "--dart-define=ENV=DEV",
+                "--dart-define=ASTROID=21e34f66-29bf-4b60-b6a3-3a4afab41474",
+                "--dart-define=ASTROSCRET=45ab62d38d67e32f931b02fc04099373ad247983d3bc9f11cc7a84dc919cae8daa163a3de83bb167de0d6faccf4d9d2b7ccb4588c2d33eb5fbc0a5f61d8402794366630b0ad29eaacb0e5f9cc27c62c3fbc67d7a431e342abeb13facffe8283fb657b6ef38d1743635142fe42ffc6bfb",
             ]
         },
         {

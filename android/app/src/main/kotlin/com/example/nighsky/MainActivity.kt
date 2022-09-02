@@ -1,4 +1,4 @@
-package com.example.nighsky
+package com.nighsky
 
 import io.flutter.embedding.android.FlutterActivity
 

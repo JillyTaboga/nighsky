@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:nighsky/interface/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,11 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return ProviderScope(
+      child: MaterialApp(
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: Colors.black,
+        ),
+        home: const HomeScreen(),
       ),
-      home: const Scaffold(),
     );
   }
 }

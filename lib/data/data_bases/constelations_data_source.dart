@@ -1,6 +1,13 @@
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nighsky/domain/entities/constellation_entity.dart';
 
-final List<ConstellationEntity> constellations = _constelationsMap
+final constellationsProvider = Provider<List<ConstellationEntity>>((ref) {
+  var list = [..._constellations];
+  list.sort(((a, b) => a.name.compareTo(b.name)));
+  return list;
+});
+
+final List<ConstellationEntity> _constellations = _constelationsMap
     .map(
       (e) => ConstellationEntity(
         cod: e['Cod'] ?? 'cod',

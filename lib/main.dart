@@ -15,6 +15,12 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: Colors.black,
+          primaryColor: Colors.white,
+          textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.white,
+            ),
+          ),
         ),
         home: const HomeScreen(),
       ),

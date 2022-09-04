@@ -3,19 +3,23 @@ import 'dart:math';
 
 import 'package:dio/dio.dart';
 import 'package:intl/intl.dart';
-import 'package:nighsky/data/data_sources/constelations_data_source.dart';
+import 'package:nighsky/data/data_sources/abstracts/astronomy_ds.dart';
 import 'package:nighsky/domain/entities/constellation_entity.dart';
 import 'package:nighsky/domain/entities/location_entity.dart';
 
-class AstronomyDataSource {
+class AstronomyDataSource implements AstronomyDS {
+  AstronomyDataSource(this.constellations);
   static const String _baseUrl = 'https://api.astronomyapi.com/api/v2/studio/';
   static String get _authEnconded => const String.fromEnvironment('ASTROID');
+
+  final List<ConstellationEntity> constellations;
 
   final Dio _http = Dio(BaseOptions(
     baseUrl: _baseUrl,
     headers: {'Authorization': 'Basic $_authEnconded'},
   ));
 
+  @override
   Future<String> getStarChart({
     required LocationEntity location,
     required DateTime date,
@@ -31,18 +35,6 @@ class AstronomyDataSource {
         longitude: location.longitude,
         date: date.subtract(const Duration(days: 365 * 10)),
       ).toMap(),
-      // "view": {
-      //   "type": "area",
-      //   "zoom": 1,
-      //   "parameters": {
-      //     "position": {
-      //       "equatorial": {
-      //         "rightAscension": 14.83,
-      //         "declination": -15.23,
-      //       },
-      //     },
-      //   }
-      // }
       "view": {
         "type": "constellation",
         "parameters": {
@@ -57,6 +49,7 @@ class AstronomyDataSource {
     return response.data['data']['imageUrl'];
   }
 
+  @override
   Future<String> getMoonPhase({
     required LocationEntity location,
     required DateTime date,

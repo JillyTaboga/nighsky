@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nighsky/domain/entities/location_entity.dart';
-import 'package:nighsky/domain/use_cases/location/getLocation.dart';
-import 'package:nighsky/domain/use_cases/location/getLocationPermission.dart';
+import 'package:nighsky/domain/use_cases/location/get_location.dart';
+import 'package:nighsky/domain/use_cases/location/get_location_permission.dart';
 
 final manualPositionProvider = StateProvider<LocationEntity>((ref) {
   return const LocationEntity();

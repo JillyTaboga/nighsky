@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nighsky/data/data_bases/constelations_data_source.dart';
 import 'package:nighsky/domain/entities/constellation_entity.dart';
-import 'package:nighsky/domain/use_cases/images/getConstellation.dart';
+import 'package:nighsky/domain/use_cases/images/get_constellation.dart';
 import 'package:nighsky/interface/controllers/date_controller.dart';
 import 'package:nighsky/interface/controllers/location_controller.dart';
 

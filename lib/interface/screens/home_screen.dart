@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:nighsky/data/data_bases/constelations_data_source.dart';
-import 'package:nighsky/domain/use_cases/location/getLocationPermission.dart';
+import 'package:nighsky/domain/use_cases/location/get_location_permission.dart';
 import 'package:nighsky/interface/controllers/constelattion_controller.dart';
 import 'package:nighsky/interface/controllers/date_controller.dart';
 import 'package:nighsky/interface/controllers/location_controller.dart';
@@ -72,10 +72,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           }),
                         ),
                         moonPhaseIamge.when(
-                          data: (moon) => Image.network(
-                            moon,
-                            width: double.infinity,
-                            fit: BoxFit.fitWidth,
+                          data: (moon) => Container(
+                            constraints: const BoxConstraints(maxWidth: 400),
+                            child: Image.network(
+                              moon,
+                              width: double.infinity,
+                              fit: BoxFit.fitWidth,
+                            ),
                           ),
                           error: (error, statck) => Text(error.toString()),
                           loading: () => const CircularProgressIndicator(),

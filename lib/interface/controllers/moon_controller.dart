@@ -1,5 +1,5 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:nighsky/domain/use_cases/images/getMoonPhase.dart';
+import 'package:nighsky/domain/use_cases/images/get_moon_phase.dart';
 import 'package:nighsky/interface/controllers/date_controller.dart';
 import 'package:nighsky/interface/controllers/location_controller.dart';
 

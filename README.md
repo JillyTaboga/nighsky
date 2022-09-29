@@ -18,3 +18,5 @@ Divisão minimalista em uma arquitetura clean, sem utilização de progamação 
 <https://nightskytime.web.app>
 
 A interface pensada foi minimalista para focar apenas no objetivo do projeto
+
+[![wakatime](https://wakatime.com/badge/user/4cd35845-67d5-4f6d-964c-41c26658b197/project/a905ada9-9637-4288-8094-30b0b929ddaf.svg)](https://wakatime.com/badge/user/4cd35845-67d5-4f6d-964c-41c26658b197/project/a905ada9-9637-4288-8094-30b0b929ddaf)
